@@ -1,2 +1,6 @@
 Agent économique -> variables internes : comptes
 chaques comptes possède une ligne crédit & débit
+
+2 types de comptes :
+
+
