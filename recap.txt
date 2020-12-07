@@ -1,6 +1,33 @@
 Agent économique -> variables internes : comptes
 chaques comptes possède une ligne crédit & débit
 
+
+Les comptes:
 2 types de comptes :
+ - Crédit (ajouter)
+ - Débit (réduire)
+
+Réaliser le bilan : 
+renseigner le type de compte :
+ - type D (bilan(a) = a.D − a.C)
+ - type C (bilan(l) = l.C − l.D)
+
+voir l'exemple si jamais
 
 
+
+Les transactions (= transfert d'une quantité entre 2 comptes)
+cela implique donc un comtpe source et un compte destination
+
+il faut donc inscrire la quantité a transférer :
+ - si le compte source inscrit la quantité dans la ligne C,  alors -> dans le compte destinataire dans la ligne D
+ - si le compte source inscrit la quantité dans la ligne D,  alors -> dans le compte destinataire dans la ligne C
+
+
+Modélisation :
+ - Catégorie : 
+    - La catégorie 1 : comptes de type (D) représentant ce que l’agent possède
+    - La catégorie 2 : comptes de type (C) représentant ce que l’agent doit aux autres
+    - La catégorie 3 : comptes de type (C) représentant ce que l’agent doit à ses propriétaires (ou actionnaires)
+    - La catégorie 4 : comptes de type (C) représentant les revenus de l’agent
+    - La catégorie 5 : comptes de type (C) représentant les dépenses de l’agent
