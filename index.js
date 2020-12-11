@@ -1,56 +1,22 @@
-let numAccount
-let nom
+
 
 class Agent {
-   
     constructor(){
-        this.accounts = []
-        this.createAccount(1, 'Cash')
-    }
-
-    createAccount(){
-
     }
 }
 
 class Account {
     constructor() {
-
     }
 }
 
 
 class Transaction {
-    constructor() {
-
+    constructor() 
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let agent1 = new Agent()
 
 
 //code de camille
