@@ -4,6 +4,12 @@ class Account {
         this.nom = nom
         this.categorie = categorie
     }
+
+    credit(){
+    }
+
+    debit(){
+    }
 }
 
 class LigneDeCompte{
@@ -25,10 +31,11 @@ class LigneDeCompte{
 }
 
 class Transaction {
-    // elle prend en paramètre le compte ou l'argent sera débité, et le compte ou l'argent sera créditée
-    constructor(compteDebite, compteCredite) {
+    // elle prend en paramètre le compte ou l'argent sera débité, et le compte ou l'argent sera créditée + la value?
+    constructor(compteDebite, compteCredite, value) {
         this.compteDebite = compteDebite
         this.compteCredite = compteCredite
+        this.value = value
     }
 }
 
@@ -45,9 +52,8 @@ class Agent{
         let compte5 = new Account(5, 'Achat', 'C')
         let comptes = [compte1,compte2,compte3,compte4,compte5]
 
-        // chaque compte a une liste de ligne de compte
-
-        comptes.forEach(compte => console.log(compte)) 
+        return comptes
+        // TODO : chaque compte a une liste de ligne de compte
     }
 
     getLigneDeCompte(){
@@ -57,17 +63,19 @@ class Agent{
 
     effectuerTransaction(){
         let transaction1 = new Transaction()    
-
-        // c'est ici qu'on décide de mettre dans la case D ou C de la ligne du compte pour les comptes concernés
+        // TODO : c'est ici qu'on décide de mettre dans la case D ou C de la ligne du compte pour les comptes concernés
     }
 
 	bilan()	{
-        // parcourir les comptes, et calculer les bilans
-        // somme des lignes de compte
+        let comptes = this.getCompte()
+        comptes.forEach(compte => console.log(compte)) 
+
+        // TODO : parcourir les comptes, et calculer les bilans
+        // TODO : somme des lignes de compte
     }
 
     afficherTableau(){
-        // importer toute les autres fonctions
+        // TODO : importer toute les autres fonctions
     }
 }
 
