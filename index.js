@@ -50,7 +50,7 @@ class Agent{
         comptes.forEach(compte => console.log(compte)) 
     }
 
-    getLiGNEDeCompte(){
+    getLigneDeCompte(){
         let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
         let date = ligne1.getDate()
         console.log(date)
