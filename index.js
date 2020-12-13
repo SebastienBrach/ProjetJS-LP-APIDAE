@@ -36,10 +36,7 @@ class Agent{
     constructor(name){
         this.name=name
     }   
-	
-	// liste de ligne de compte
-    // il s'occupe des transactions
-    
+	   
     getCompte() {
         let compte1 = new Account(1, 'Cash', 'D')
         let compte2 = new Account(2, 'Emprunt', 'C')
@@ -53,12 +50,11 @@ class Agent{
         comptes.forEach(compte => console.log(compte)) 
     }
 
-    getListeDeCompte(){
+    getLiGNEDeCompte(){
         let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
         let date = ligne1.getDate()
         console.log(date)
     }
-
 
     effectuerTransaction(){
         let transaction1 = new Transaction()    
@@ -79,8 +75,3 @@ let agent = new Agent("Sébastien")
 let ligne1 = new LigneDeCompte(new Account(1, 'Cash', 'D'),"D", "C", "13/12/2020", 1000)
 
 console.log(ligne1)
-
-
-
-
-// console.log("Bilan : "+agent.bilan)
