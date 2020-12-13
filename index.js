@@ -7,10 +7,12 @@ class Account {
 }
 
 class LigneDeCompte{
-    constructor(credit, debit, date){
+    constructor(compte, credit, debit, date, value){
+        this.compte = compte
         this.credit = credit
         this.debit = debit
         this.date = date
+        this.value = value
     }
 
     getDate(){
@@ -49,7 +51,8 @@ class Agent{
 
     getListeDeCompte(){
         let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
-        console.log(ligne1.getDate())
+        let date = ligne1.getDate()
+        console.log(date)
     }
 
 
@@ -66,9 +69,12 @@ class Agent{
 }
 
 let agent = new Agent("Sébastien")
-console.log(agent.getCompte())
-console.log(agent.getListeDeCompte())
+// console.log(agent.getCompte())
+// console.log(agent.getListeDeCompte())
 
+let ligne1 = new LigneDeCompte(new Account(1, 'Cash', 'D'),"D", "C", "13/12/2020", 1000)
+
+console.log(ligne1)
 
 
 
