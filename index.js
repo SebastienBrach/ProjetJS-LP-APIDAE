@@ -2,7 +2,15 @@ class Agent {
     constructor(name){
         this.name=name
     }   
-}
+	
+	// liste de compte
+	// liste de ligne de compte
+	// il s'occupe des transactions
+	
+	function bilan()
+	{
+		//parcourir les comptes, et calculer les bilans
+	}
 
 class Account {
     constructor(agent, numero, nom, categorie) {
@@ -13,10 +21,16 @@ class Account {
     }
 }
 
+class LigneDeCompte{
+	
+}
+
 
 class Transaction {
     constructor() {
     }
+	
+	// elle prend en paramètre le compte ou l'argent sera débité, et le compte ou l'argent sera créditée
 }
 let agent = new Agent("Sébastien")
 let account1 = new Account(agent.name, 01, "Cash","D")
@@ -24,8 +38,6 @@ let account2 = new Account(agent.name, 02, "Emprunt","C")
 let account3 = new Account(agent.name, 03, "Capital","C")
 let account4 = new Account(agent.name, 04, "Vente","C")
 let account5 = new Account(agent.name, 05, "Achat","C")
-
-console.log('mimi elle t aime beaucoup mais elle a quand meme besoin de toi donc desole de pas t aider mais je m en fous je dois faire le bassin obste desole :) donc arrete et vient m aider merci bien i lovze you et je t ai deja dit que ton truc faut le faire dans excel c\'est pas complique merde tes trop nul deso') 
 
 console.log(account1)
 console.log(account2)   
