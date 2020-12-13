@@ -15,6 +15,10 @@ class LigneDeCompte{
         this.value = value
     }
 
+    getCompte(){
+        return this.compte
+    }
+
     getDate(){
         return this.date
     }
