@@ -65,6 +65,10 @@ class Agent{
         // parcourir les comptes, et calculer les bilans
         // somme des lignes de compte
     }
+
+    afficherTableau(){
+        // importer toute les autres fonctions
+    }
 }
 
 let agent = new Agent("Sébastien")
