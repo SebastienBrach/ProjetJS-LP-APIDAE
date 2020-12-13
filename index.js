@@ -51,9 +51,8 @@ class Agent{
     }
 
     getLigneDeCompte(){
-        let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
-        let date = ligne1.getDate()
-        console.log(date)
+        let ligne1 = new LigneDeCompte(new Account(1, 'Cash', 'D'),"D", "C", "13/12/2020", 1000)
+        console.log(ligne1)
     }
 
     effectuerTransaction(){
@@ -69,9 +68,4 @@ class Agent{
 }
 
 let agent = new Agent("Sébastien")
-// console.log(agent.getCompte())
-// console.log(agent.getListeDeCompte())
-
-let ligne1 = new LigneDeCompte(new Account(1, 'Cash', 'D'),"D", "C", "13/12/2020", 1000)
-
-console.log(ligne1)
+console.log(agent.getLigneDeCompte())
