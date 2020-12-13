@@ -12,6 +12,10 @@ class LigneDeCompte{
         this.debit = debit
         this.date = date
     }
+
+    getDate(){
+        return this.date
+    }
 }
 
 class Transaction {
@@ -45,8 +49,7 @@ class Agent{
 
     getListeDeCompte(){
         let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
-        let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
-
+        console.log(ligne1.getDate())
     }
 
 
@@ -64,6 +67,8 @@ class Agent{
 
 let agent = new Agent("Sébastien")
 console.log(agent.getCompte())
+console.log(agent.getListeDeCompte())
+
 
 
 
