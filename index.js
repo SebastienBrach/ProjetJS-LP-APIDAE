@@ -7,11 +7,10 @@ class Account {
 }
 
 class LigneDeCompte{
-    constructor(credit, debit, date, heure){
+    constructor(credit, debit, date){
         this.credit = credit
         this.debit = debit
         this.date = date
-        this.heure = heure
     }
 }
 
@@ -39,16 +38,22 @@ class Agent{
         let compte5 = new Account(5, 'Achat', 'C')
         let comptes = [compte1,compte2,compte3,compte4,compte5]
 
+        // chaque compte a une liste de ligne de compte
+
         comptes.forEach(compte => console.log(compte)) 
     }
 
     getListeDeCompte(){
-        let ligne1 = new LigneDeCompte()
+        let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
+        let ligne1 = new LigneDeCompte("D", "C", "13/12/2020")
+
     }
 
 
     effectuerTransaction(){
-        let transaction1 = new Transaction()       
+        let transaction1 = new Transaction()    
+
+        // c'est ici qu'on décide de mettre dans la case D ou C de la ligne du compte pour les comptes concernés
     }
 
 	bilan()	{
@@ -57,93 +62,10 @@ class Agent{
     }
 }
 
-
-// chaque compte a une liste de ligne de compte 
-
-
 let agent = new Agent("Sébastien")
 console.log(agent.getCompte())
 
 
 
+
 // console.log("Bilan : "+agent.bilan)
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//code de camille
-// class Agent{
-//     constructor(){
-//       this.accounts = [];
-//       this.createAccount(1, 'Cash');
-//     }
-//     ...
-//     printData(){
-//       for(let element in this.accounts){
-//         console.log(this.accounts[element].toString());
-//       }
-    
-//   }
-//   class Account{
-//     constructor(name = 'defaultValue'){
-//       this.name = name;
-//     }
-  
-//     toString(){
-//       return this.name;
-//     }
-//   }
-  
-  
-  
-//   a1 = new Agent()
-//   a1.printData()
