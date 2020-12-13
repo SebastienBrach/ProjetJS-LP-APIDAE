@@ -1,21 +1,3 @@
-class Agent {
-    constructor(name){
-        this.name=name
-    }   
-	
-	// liste de compte
-	// liste de ligne de compte
-    // il s'occupe des transactions
-    
-    //parcourir les comptes, et calculer les bilans
-	bilan()	{
-    }
-    
-    effectuerTransaction(){
-        
-    }
-}
-
 class Account {
     constructor(numero, nom, categorie) {
         this.numero = numero
@@ -25,34 +7,74 @@ class Account {
 }
 
 class LigneDeCompte{
-    constructor(credit, debit){
+    constructor(credit, debit, date, heure){
         this.credit = credit
         this.debit = debit
+        this.date = date
+        this.heure = heure
     }
-	
 }
 
 class Transaction {
+    // elle prend en paramètre le compte ou l'argent sera débité, et le compte ou l'argent sera créditée
     constructor(compteDebite, compteCredite) {
         this.compteDebite = compteDebite
         this.compteCredite = compteCredite
     }
-	
-	// elle prend en paramètre le compte ou l'argent sera débité, et le compte ou l'argent sera créditée
 }
 
-// let agent = new Agent("Sébastien")
+class Agent{
+    constructor(name){
+        this.name=name
+    }   
+	
+	// liste de ligne de compte
+    // il s'occupe des transactions
+    
+    getCompte() {
+        let compte1 = new Account(1, 'Cash', 'D')
+        let compte2 = new Account(2, 'Emprunt', 'C')
+        let compte3 = new Account(3, 'Capital', 'C')
+        let compte4 = new Account(4, 'Vente', 'C')
+        let compte5 = new Account(5, 'Achat', 'C')
+        let comptes = [compte1,compte2,compte3,compte4,compte5]
+
+        comptes.forEach(compte => console.log(compte)) 
+    }
+
+    getListeDeCompte(){
+        let ligne1 = new LigneDeCompte()
+    }
+
+
+    effectuerTransaction(){
+        let transaction1 = new Transaction()       
+    }
+
+	bilan()	{
+        // parcourir les comptes, et calculer les bilans
+        // somme des lignes de compte
+    }
+}
+
+
+// chaque compte a une liste de ligne de compte 
+
+
+let agent = new Agent("Sébastien")
+console.log(agent.getCompte())
+
+
+
 // console.log("Bilan : "+agent.bilan)
 
-let compte1 = new Account(1, 'Cash', 'D')
-let compte2 = new Account(2, 'Emprunt', 'C')
-let compte3 = new Account(3, 'Capital', 'C')
-let compte4 = new Account(4, 'Vente', 'C')
-let compte5 = new Account(5, 'Achat', 'C')
 
-let compte = [compte1,compte2,compte3,compte4,compte5]
 
-console.log(compte)
+
+
+
+
+
 
 
   
