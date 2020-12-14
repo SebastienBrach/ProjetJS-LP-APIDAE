@@ -73,11 +73,9 @@ class Agent{
         // TODO : parcourir les comptes, et calculer les bilans
         // TODO : somme des lignes de compte
     }
-
-    afficherTableau(){
-        // TODO : importer toute les autres fonctions
-    }
 }
 
 let agent = new Agent("Sébastien")
 console.log(agent.getLigneDeCompte())
+
+//
