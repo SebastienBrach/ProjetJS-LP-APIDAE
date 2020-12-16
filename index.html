@@ -38,16 +38,17 @@
                 </tr>
             </tbody>
         </table>
-        <h2 id=""></h2>
-        <h2 id=""></h2>
+        <h2 id="resultat"></h2>
+        <h2 id="bilanComptable"></h2>
     </center>
 </div>
 
 <script src="jquery.min.js"></script>
 <script src="main.js"></script>
-
 <script>
-    console.log(revenus)
+    $('#resultat').html('Résultat : '+revenus+depenses+' = '+resultat)
+    $('#bilanComptable').html('Bilan : '+bilanGaucheEgalite+' = '+bilanDroiteEgalite)
+
 </script>
 </body>
 </html>
