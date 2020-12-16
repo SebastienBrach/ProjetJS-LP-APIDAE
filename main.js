@@ -71,28 +71,44 @@ class Agent {
     }
 
     resultat(revenus, depenses){
-        let resultat 
-        return resultat = revenus + depenses
+        return revenus + depenses
     }
     
-    bilanComptable(){
+    bilanComptable(cash, inventaire, emprunt, capital, resultat){
+        let bilanType1 = cash + inventaire
+        let bilanType2 = emprunt
+        let bilanType3 = capital
+        let bilanDroite = bilanType2 + bilanType3 + resultat
 
+        return {
+            bilan1: bilanType1,
+            bilan2: bilanDroite,
+        }
     }
 }
 
 
 const agent1 = new Agent(); // Création d'un agent
 agent1.makeTransaction(agent1.accounts.capital, agent1.accounts.cash, 1000); // Première transaction
-agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.achat, 50); // Première transaction
-agent1.makeTransaction(agent1.accounts.achat, agent1.accounts.inventaire, 50); // Première transaction
-agent1.makeTransaction(agent1.accounts.inventaire, agent1.accounts.cout, 50); // Première transaction
-agent1.makeTransaction(agent1.accounts.vente, agent1.accounts.cash, 80); // Première transaction
+agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.achat, 50); // Deuxième transaction
+agent1.makeTransaction(agent1.accounts.achat, agent1.accounts.inventaire, 50); // Troisième transaction
+agent1.makeTransaction(agent1.accounts.inventaire, agent1.accounts.cout, 50); // Quatrième transaction
+agent1.makeTransaction(agent1.accounts.vente, agent1.accounts.cash, 80); // Cinquième transaction
+
+// console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
 
 let revenus = parseInt(agent1.accounts.vente.calculateBalance())
 let depenses = parseInt(agent1.accounts.cout.calculateBalance())
-let resultat = agent1.resultat(revenus, depenses);
-console.log("Résultat = "+resultat)
+let cash = parseInt(agent1.accounts.cash.calculateBalance())
+let inventaire = parseInt(agent1.accounts.inventaire.calculateBalance())
+let emprunt = parseInt(agent1.accounts.emprunt.calculateBalance())
+let capital = parseInt(agent1.accounts.capital.calculateBalance())
+
+let resultat = parseInt(agent1.resultat(revenus, depenses))
+let bilanComptable = agent1.bilanComptable(cash, inventaire, emprunt, capital, resultat)
+let bilanGaucheEgalite = bilanComptable.bilan1
+let bilanDroiteEgalite = bilanComptable.bilan2
 
 
-
-// console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
+console.log("Résultat : "+resultat)
+console.log("Bilan : "+bilanGaucheEgalite+' = '+bilanDroiteEgalite)
