@@ -8,7 +8,6 @@ class Account {
     
     calculateBalance () {
         if (this.type === "D") {
-            //Initialisation de la somme des crédit et des débit
             let creditSum = 0;
             let debitSum = 0;
         
@@ -22,14 +21,25 @@ class Account {
                 debitSum += this.dLines[i];           
             }
         
-            // Retour du résultat qui est égal à la différence entre la somme des débits et la somme des crédits       
-            // pour un compte de type D 
+            // Différence entre la somme des débits et la somme des crédits pour un compte de type D 
             return debitSum - creditSum;
         
-        
         } else if (this.type === "C") {
-            // faire la même chose pour les compte de type C
-            return "somme lignes de crédits - somme lignes de débits"
+            let creditSum = 0;
+            let debitSum = 0;
+        
+            // calcul de la somme des crédits
+            for (let i = 0; i < this.cLines.length; i++) {
+                creditSum += this.cLines[i];
+            }
+        
+            // calcul de la somme des débits
+            for (let i = 0; i < this.dLines.length; i++) {
+                debitSum += this.dLines[i];           
+            }
+        
+            // Différence entre la somme des débits et la somme des crédits pour un compte de type C
+            return creditSum - debitSum 
         }
     }
 }
@@ -51,20 +61,18 @@ class Agent {
         source.cLines.push(amount);
         destination.dLines.push(amount);
 
-        // Une transaction, que je n'ai pas modélisée séparément, et qui serait un objet comme celui ajouté 
-        // à la liste de transactions ci-après.
-
         this.transactions.push({ // ajoute une transaction à la liste des transactions
-            date: new Date(),
+            date: new Date().toISOString().substring(0, 10),
             source,
             destination,
         })
     }
 }
 
-    
 
 const agent1 = new Agent(); // Création d'un agent
 agent1.makeTransaction(agent1.accounts.capital, agent1.accounts.cash, 1000); // Première transaction
-console.log(agent1.accounts.cash.calculateBalance()); // calcul du bilan du compte cash retourne 1000
-console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
+agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.sales, 500); // Première transaction
+console.log(agent1.accounts.cash.calculateBalance()); // calcul du bilan 
+console.log(agent1.accounts.sales.calculateBalance()); // calcul du bilan 
+// console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
