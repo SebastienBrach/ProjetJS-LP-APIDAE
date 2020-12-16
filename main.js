@@ -49,10 +49,12 @@ class Agent {
     constructor() {
         this.accounts = {
             cash: new Account(10, "D"),
-            loans: new Account(20, "C"),
+            inventaire: new Account(11, "D"),
+            emprunt: new Account(20, "C"),
             capital: new Account(30, "C"),
-            sales: new Account(40, "C"),
-            purchases: new Account(50, "C"),
+            vente: new Account(40, "C"),
+            achat: new Account(50, "C"),
+            cout: new Account(51, "C"),
         };
         this.transactions = [];
     }
@@ -67,12 +69,30 @@ class Agent {
             destination,
         })
     }
+
+    resultat(revenus, depenses){
+        let resultat 
+        return resultat = revenus + depenses
+    }
+    
+    bilanComptable(){
+
+    }
 }
 
 
 const agent1 = new Agent(); // Création d'un agent
 agent1.makeTransaction(agent1.accounts.capital, agent1.accounts.cash, 1000); // Première transaction
-agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.sales, 500); // Première transaction
-console.log(agent1.accounts.cash.calculateBalance()); // calcul du bilan 
-console.log(agent1.accounts.sales.calculateBalance()); // calcul du bilan 
+agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.achat, 50); // Première transaction
+agent1.makeTransaction(agent1.accounts.achat, agent1.accounts.inventaire, 50); // Première transaction
+agent1.makeTransaction(agent1.accounts.inventaire, agent1.accounts.cout, 50); // Première transaction
+agent1.makeTransaction(agent1.accounts.vente, agent1.accounts.cash, 80); // Première transaction
+
+let revenus = parseInt(agent1.accounts.vente.calculateBalance())
+let depenses = parseInt(agent1.accounts.cout.calculateBalance())
+let resultat = agent1.resultat(revenus, depenses);
+console.log("Résultat = "+resultat)
+
+
+
 // console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
