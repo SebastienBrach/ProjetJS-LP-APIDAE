@@ -109,6 +109,7 @@ let bilanComptable = agent1.bilanComptable(cash, inventaire, emprunt, capital, r
 let bilanGaucheEgalite = bilanComptable.bilan1
 let bilanDroiteEgalite = bilanComptable.bilan2
 
-
+console.log("Liste des transactions :")
+agent1.transactions.forEach(transaction => console.log(transaction))
 console.log("Résultat : "+resultat)
 console.log("Bilan : "+bilanGaucheEgalite+' = '+bilanDroiteEgalite)
