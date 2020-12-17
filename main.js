@@ -88,14 +88,13 @@ class Agent {
 }
 
 
-const agent1 = new Agent(); // Création d'un agent
+const agent1 = new Agent(); 
+
 agent1.makeTransaction(agent1.accounts.capital, agent1.accounts.cash, 1000); // Première transaction
 agent1.makeTransaction(agent1.accounts.cash, agent1.accounts.achat, 50); // Deuxième transaction
 agent1.makeTransaction(agent1.accounts.achat, agent1.accounts.inventaire, 50); // Troisième transaction
 agent1.makeTransaction(agent1.accounts.inventaire, agent1.accounts.cout, 50); // Quatrième transaction
 agent1.makeTransaction(agent1.accounts.vente, agent1.accounts.cash, 80); // Cinquième transaction
-
-// console.log(agent1.transactions); // Retourne la liste des transactions de l'agent 1
 
 let revenus = parseInt(agent1.accounts.vente.calculateBalance())
 let depenses = parseInt(agent1.accounts.cout.calculateBalance())
